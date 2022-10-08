@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main ()
+{
+   int n ;
+   printf("Enter the order of matrix  : ");
+   scanf("%d" ,&n);
+   float M[n][n+1] , sol[n];
+   for(int i = 0;i<n ;i++)
+   {
+    for(int j =0;j<=n;j++)
+    {
+        scanf("%f", &M[i][j]);
+    }
+   }
+   
+   for(int i =0 ;i< n ;i++)
+   {
+    for(int j =0 ;j<n ;j++)
+    {
+        if(i!= j)
+        {
+            float ratio = M[j][i]/M[i][i];
+            for(int k =0 ;k<n+1 ; k++)
+            {
+                M[j][k] -= ratio*M[i][k];
+            }
+        }
+    }
+   }
+   for(int i =0 ;i<n ;i++)
+   {
+    printf("Value %d : %.2f\n", i+1 , M[i][n]/M[i][i]);
+   }
+  return 0 ;
+}
