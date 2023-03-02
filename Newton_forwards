@@ -34,5 +34,5 @@ for(i=1;i<=(n-1);i++)
                    
  }                         
 printf("For the value of x=%6.5f THe value is %6.5f",f,d);
- return 0;
+
 }
